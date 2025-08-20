@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let table = document.getElementById("output");
 	let tableRow = document.createElement('tr');
 	let tableData = document.createElement("td");
-
+    tableRow.id = "loading";
 	tableData.colSpan = 2;
 	tableData.innerHTML = 'Loading...';
 
