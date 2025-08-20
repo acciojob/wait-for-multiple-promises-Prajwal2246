@@ -45,10 +45,12 @@ let t = Math.floor(Math.random()*3)+1;
 Promise.all([promise1(),promise2(),promise3()]).then((values)=>{
 	table.innerHTML="";
 
+	let total=0;
 	values.forEach((time,index)=>{
 		let row = document.createElement('tr');
 		let nameCell = document.createElement("td");
 		let timeCell = document.createElement('td');
+		
 
 		nameCell.textContent = `Promise ${index+1}`;
 		timeCell.textContent = time;
@@ -56,7 +58,20 @@ Promise.all([promise1(),promise2(),promise3()]).then((values)=>{
 		row.appendChild(nameCell);
 		row.appendChild(timeCell);
 		table.appendChild(row);
+
+		total+=time;
 	});
+	let totalrow = document.createElement('tr');
+	let totalNameCell= document.createElement('td');
+	let totalTimeCell= document.createElement('td');
+
+	totalNameCell.textContent = 'Total';
+	totalTimeCell.textContent = total;
+
+	tablerow.appendChild(totalNameCell);
+	tablerow.appendChild(totalTimeCell);
+	table.appendChild(totalrow);
+	
 });
 
 	
