@@ -68,8 +68,8 @@ Promise.all([promise1(),promise2(),promise3()]).then((values)=>{
 	totalNameCell.textContent = 'Total';
 	totalTimeCell.textContent = total;
 
-	tablerow.appendChild(totalNameCell);
-	tablerow.appendChild(totalTimeCell);
+	totalrow.appendChild(totalNameCell);
+	totalrow.appendChild(totalTimeCell);
 	table.appendChild(totalrow);
 	
 });
